@@ -109,4 +109,7 @@ async function init(){try{let r=await fetch('/api/status');let d=await r.json();
 if(window.io){socket=io();socket.on('live-event',e=>event(e));socket.on('provider-status',s=>{providerConnected=!!s.connected;badge();$('providerInfo').textContent=providerConnected?'Chat verbunden mit @'+s.handle:'Nicht verbunden'});socket.on('provider-error',e=>toast(e.message))}
 init();render();selectGame('drop');
 </script>
+<script src="/infinite-run.js"></script>
+</body>
+</html>
 </body></html>
