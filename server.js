@@ -37,7 +37,9 @@ app.post("/api/tiktok/connect", async (req, res) => {
       try { liveConnection.disconnect(); } catch {}
       liveConnection = null;
     }
-    const connection = new TikTokLiveConnection(handle);
+    const connection = new TikTokLiveConnection(handle, {
+  processInitialData: false
+});
     liveConnection = connection;
     connectedHandle = handle;
 
